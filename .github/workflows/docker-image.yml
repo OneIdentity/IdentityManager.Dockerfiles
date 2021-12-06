@@ -1,0 +1,29 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    name: "Build containers version ${{ matrix.version }} on ${{ matrix.winversion }}"
+    runs-on: ${{ matrix.winversion == 'ltsc2022' && 'windows-2022' || 'windows-2019' }}
+    
+    strategy:
+      matrix:
+        version: ["8.1.1", "8.2"]
+        winversion: ["ltsc2019", "ltsc2022"]
+        exclude:
+          - version: "8.1.1"
+            winversion: ltsc2022
+      fail-fast: false 
+        
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      working-directory: jobservice/windows/ExchangeOnline
+      run: docker build . --file Dockerfile --tag oneim-job-o365:$(date +%s) --build-arg VERSION=${{ matrix.version }} --build-arg WINDOWSVERSION=windowsservercore-${{ matrix.winversion }}
