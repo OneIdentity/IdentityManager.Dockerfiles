@@ -1,0 +1,7 @@
+# Jobservice for Exchange Online services
+
+Build the container image:
+
+```
+docker build . --tag oneim-job-o365 --build-arg VERSION=8.2 --build-arg WINDOWSVERSION=windowsservercore-ltsc2019
+```
