@@ -24,6 +24,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
+
+    - name: Build the Office 365 image
       working-directory: jobservice/windows/o365
       run: docker build . --file Dockerfile --tag oneim-job-o365:$(date +%s) --build-arg VERSION=${{ matrix.version }} --build-arg WINDOWSVERSION=windowsservercore-${{ matrix.winversion }}
+
+    - name: Build the PAG image
+      working-directory: jobservice/windows/pag
+      run: docker build . --file Dockerfile --tag oneim-job-pag:$(date +%s) --build-arg VERSION=${{ matrix.version }} --build-arg WINDOWSVERSION=windowsservercore-${{ matrix.winversion }}

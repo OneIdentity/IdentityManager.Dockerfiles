@@ -1,0 +1,15 @@
+# Jobservice for Priviledged Account Governance
+
+Build the container image:
+
+```
+docker build . --tag oneim-job-pag --build-arg VERSION=8.2 --build-arg WINDOWSVERSION=windowsservercore-ltsc2019 --build-arg SAFEGUARDVERSION=6.11.30528
+```
+
+You can set the following build arguments:
+
+| Name             | Default                    | Description                                                |
+|------------------|----------------------------|------------------------------------------------------------|
+| VERSION          | 8.2                        | Version of Identity Manager containers to be used as base. |
+| WINDOWSVERSION   | windowsservercore-ltsc2019 | Windows version the base containers are built for.         |
+| SAFEGUARDVERSION | 6.11.30528                 | Version of safeguard-ps to be used.                        |
