@@ -5,5 +5,5 @@ ARG WINDOWSVERSION=windowsservercore-ltsc2019
 
 FROM oneidentity/oneim-job:windows-amd64-${VERSION}-${WINDOWSVERSION}
 
-RUN Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force ; `
+RUN Install-PackageProvider -Name NuGet -Force ; `
     Install-Module -Name ExchangeOnlineManagement -Force
