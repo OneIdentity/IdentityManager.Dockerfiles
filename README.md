@@ -6,3 +6,4 @@ based on the images released by One Identity.
 
 * [Exchange Online Sync Server](jobservice/windows/o365)
 * [Priviledged Account Governance Sync Server](jobservice/windows/pag) (SafeGuard)
+* [Active Roles Sync Server](jobservice/windows/ars)
