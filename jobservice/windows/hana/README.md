@@ -1,9 +1,10 @@
-# Jobservice for Priviledged Account Governance sync services
+# Jobservice for SAP HANA sync services
 
 Build the container image:
 
 ```
-docker build . --tag oneim-job-pag --build-arg VERSION=8.2 --build-arg WINDOWSVERSION=windowsservercore-ltsc2019 --build-arg SAFEGUARDVERSION=6.11.30528
+copy path/to/hdb_client_windows_x86_64.zip .
+docker build . --tag oneim-job-hana --build-arg VERSION=8.2 --build-arg WINDOWSVERSION=windowsservercore-ltsc2019
 ```
 
 You can set the following build arguments:
@@ -12,6 +13,3 @@ You can set the following build arguments:
 |------------------|----------------------------|------------------------------------------------------------|
 | VERSION          | 8.2                        | Version of Identity Manager containers to be used as base. |
 | WINDOWSVERSION   | windowsservercore-ltsc2019 | Windows version the base containers are built for.         |
-| SAFEGUARDVERSION | 6.11.30528                 | Version of safeguard-ps to be used.                        |
-
-Additionally you need to add the authentication certificate to the user store.

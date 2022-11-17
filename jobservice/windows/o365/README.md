@@ -1,4 +1,4 @@
-# Jobservice for Exchange Online services
+# Jobservice for Exchange Online sync services
 
 Build the container image:
 

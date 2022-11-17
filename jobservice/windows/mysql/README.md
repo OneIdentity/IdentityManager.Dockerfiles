@@ -1,9 +1,10 @@
-# Jobservice for Priviledged Account Governance sync services
+# Jobservice for MySQL sync services
 
 Build the container image:
 
 ```
-docker build . --tag oneim-job-pag --build-arg VERSION=8.2 --build-arg WINDOWSVERSION=windowsservercore-ltsc2019 --build-arg SAFEGUARDVERSION=6.11.30528
+copy path/to/mysql-connector-net-<Version>.msi mysql-connector-net.msi
+docker build . --tag oneim-job-mysql --build-arg VERSION=8.2 --build-arg WINDOWSVERSION=windowsservercore-ltsc2019
 ```
 
 You can set the following build arguments:
@@ -12,6 +13,3 @@ You can set the following build arguments:
 |------------------|----------------------------|------------------------------------------------------------|
 | VERSION          | 8.2                        | Version of Identity Manager containers to be used as base. |
 | WINDOWSVERSION   | windowsservercore-ltsc2019 | Windows version the base containers are built for.         |
-| SAFEGUARDVERSION | 6.11.30528                 | Version of safeguard-ps to be used.                        |
-
-Additionally you need to add the authentication certificate to the user store.
