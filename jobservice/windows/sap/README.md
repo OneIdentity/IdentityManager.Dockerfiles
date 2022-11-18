@@ -1,4 +1,4 @@
-# Jobservice for SAP sync services
+# Jobservice for SAP R/3 sync services
 
 Build the container image:
 
